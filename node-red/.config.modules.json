@@ -1,0 +1,14 @@
+{
+    "mysql2": {
+        "spec": "mysql2",
+        "module": "mysql2",
+        "builtin": false,
+        "known": false
+    },
+    "knex": {
+        "spec": "knex",
+        "module": "knex",
+        "builtin": false,
+        "known": false
+    }
+}

@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+}
+header{
+    height: 300px;
+    background: #04713A;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    /*background: url(../banner1.jpg);*/
+}
+nav{
+    height: 50px;
+    background: #000000;
+    color: #FFF;
+    text-align: center;
+}
+section{
+    width: 20%;
+    height: 600px;
+    background: #04713A;
+    text-align: center;
+    float: left;
+}
+article{
+    float: left;
+    width: 60%;
+    height: 600px;
+    background: #FF1;
+    text-align: center;
+}
+aside{
+    float: left;
+    width: 20%;
+    height: 600px;
+    background: #FFD;
+    text-align: center;
+}
+footer{
+    clear: both;
+    height: 100px;
+    background: #FDA;
+    text-align: center;]
+    background: ;
+}
+.top{
+    width: 100%;
+    height: 200px;
+    background: lime;
+}
+.middle{
+    width: 100%;
+    height: 200px;
+    background: salmon;
+}
+.bottom{
+    width: 100%;
+    height: 200px;
+    background: skyblue;
+}

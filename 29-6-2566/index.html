@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TATC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel">
+      <nav class="navbar navbar-expand-lg position-absolute z-2 end-0" style="background:rgb(31, 38, 255, 0.399); border-radius: 50px 0px 0px 50px;" data-bs-theme="dark">
+        <div class="container-fluid">
+            <h1 class="text-white">TATC-</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-2 mb-lg-0 me-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="border-radius: 50px; background:red;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  หลักสูตรที่เปิดสอน(ปวช.)
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างยนต์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างกลโรงงาน</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างเชื่อมโลหะ</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างไฟฟ้ากำลัง</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างอิเล็กทรอนิกส์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างก่อสร้าง</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างเขียนแบบเครื่องกล</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเมคคาทรอนิกส์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคนิคคอมพิวเตอร์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการบัญชี</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการโรงแรม</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการท่องเที่ยว</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคโนโลยีสารสนเทศ</a></li>
+
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="border-radius: 50px; background:red;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  หลักสูตรที่เปิดสอน(ปวส.)
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเครื่องกล</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคการผลิต</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคนิคโลหะ</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาไฟฟ้า</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาอิเล็กทรอนิกส์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการก่อสร้าง</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเขียนแบบเครื่องกล</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคนิคพลังงาน</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการตรวจสอบโดยไม่ทำลาย</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเครื่องมือวัดและควบคุม</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างอากาศยาน</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเมคคาทรอนิกส์และหุ่นยนต์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคโนโลยีคอมพิวเตอร์</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาช่างเทคนิคควบคุมและซ่อมบำรุงระบบขนส่งทางราง</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคนิคยายนต์ไฟฟ้า</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการบัญชี</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการจัดการธุรกิจค้าปลีก</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการจัดการโลจิสติกส์และซัพพลายเชน</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาธุรกิจการบิน</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการโรงแรม</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาการท่องเที่ยว</a></li>
+                  <li><a class="dropdown-item" href="#">สาขาวิชาเทคโนโลยีสารสนเทศ</a></li>
+
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="border-radius: 50px; background:red;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ฝ่ายบริหารทรัพยากร
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"> งานบุคลากร</a></li>
+                    <li><a class="dropdown-item" href="#">งานการเงิน</a></li>
+                    <li><a class="dropdown-item" href="#">งานบัญชี</a></li>
+                    <li><a class="dropdown-item" href="#">งานพัสดุ</a></li>
+                    <li><a class="dropdown-item" href="#">งานอาคารสถานที่</a></li>
+                    <li><a class="dropdown-item" href="#">งานทะเบียน</a></li>
+                    <li><a class="dropdown-item" href="#">งานบริหารทั่วไป</a></li>
+                    <li><a class="dropdown-item" href="#">งานประชาสัมพันธ์</a></li>
+                    </ul>
+                    </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" style="border-radius: 50px; background:red;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ฝ่ายวิชาการ
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">งานพัฒนาหลักสูตรฯ</a></li>
+                    <li><a class="dropdown-item" href="#">งานวัดผลและประเมินผล</a></li>
+                    <li><a class="dropdown-item" href="#">งานวิทยบริการ</a></li>
+                    <li><a class="dropdown-item" href="#">งานอาชีวศึกษาระบบทวิภาคี</a></li>
+                    <li><a class="dropdown-item" href="#">งานสื่อการเรียนการสอน</a></li>
+                    </ul>
+                    </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" style="border-radius: 50px; background:red;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ฝ่ายแผนงานและความร่วมมือ
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">งานส่งเสริมผลผลิตการค้าฯ
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">งานศูนย์ข้อมูลสารสนเทศ</a></li>
+                    <li><a class="dropdown-item" href="#">งานความร่วมมือ</a></li>
+                    <li><a class="dropdown-item" href="#">งานวางแผนและงบประมาณ</a></li>
+                    <li><a class="dropdown-item" href="#">งานวิจัย พัฒนาฯ</a></li>
+                    <li><a class="dropdown-item" href="#">งานประกันคุณภาพฯ</a></li>
+                    <li><a class="dropdown-item" href="#">งานศูนย์บ่มเพาะผู้ประกอบการอาชีวศึกษา</a></li>
+                    </ul>
+                    </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" style="border-radius: 50px; background:red;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ฝ่ายพัฒนาการศึกษา
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">งานครูที่ปรึกษา</a></li>
+                    <li><a class="dropdown-item" href="#">งานปกครอง</a></li>
+                    <li><a class="dropdown-item" href="#">งานแนะแนวอาชีพและจัดหางาน</a></li>
+                    <li><a class="dropdown-item" href="#">งานสวัสดิการนักเรียนนักศึกษา
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">งานโครงการพิเศษ</a></li>
+                    <li><a class="dropdown-item" href="#">งานกิจกรรมนักเรียนนักศึกษา</a></li>
+                    <li><a class="dropdown-item" href="#">งานรักษาดินแดน</a></li>
+                    <li><a class="dropdown-item" href="#">งานกีฬาภายใน 'ลานกีฬา ต้านยาเสพติด'</a></li>
+                    </ul>
+                    </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="img/p1.jpg" class="d-block w-100" alt="" />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="img/p2.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="img/p3.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="img/p4.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="img/p5.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="img/p6.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Nav&tabs -->
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">ประกาศรับสมัคร</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">ประกาศจัดการซื้อ/จัดจ้าง</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">กิจกรรมและข่าวประชาสัมพันธ์</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <div class="container">
+                <table class="table table-striped mt-5 mb-5 w-75" style="margin: 0 auto;">
+                <tr>
+                    <td>28/06/66</td>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href="">รายชื่อผู้มีสิทธิ์สอบคัดเลือกลูกจ้างชั่วคราว ตำแหน่งครูพิเศษสอน (ช่างยนต์)</a></td>
+                <tr>
+                    <td>28/06/66</td>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href=""> รายชื่อผู้มีสิทธิ์สอบคัดเลือกลูกจ้างชั่วคราว ตำแหน่งเจ้าหน้าที่งานบุคลากร</a></td>
+                </tr>
+                <tr>
+                    <td>13/06/2566</td>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href="">การรับสมัครลูกจ้างชั่วคราว ตำแหน่งเจ้าหน้าที่ จำนวน 2 อัตรา</a></td>
+                </tr>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <table class="table table-striped mt-5 mb-5 w-75" style="margin: 0 auto;">
+            <tr>
+                <td>03/05/66</td>
+                <td>ประกาศจัดซื้อจัดจ้าง เรื่อง <a href="">ประกวดราคาซื้อโครงการเงินอุดหนุนค่าอุปกรณ์การเรียนของนักเรียนสายอาชีพ อาชีวศึกษา ประจำปีงบประมาณ 2566 ด้วยวิธีประกวดราคาอิเล็กทรอนิกส์ (e-bidding)</a></td>
+            </tr>
+            <tr>
+                <td>25/04/66</td>
+                <td>ประกาศจัดซื้อจัดจ้าง เรื่อง <a href="">ประชาพิจารณ์ (ร่าง) ประกาศและร่างเอกสารประกวดราคาจัดซื้อโครงการเงินอุดหนุนค่าอุปกรณ์การเรียนของนักเรียนสายอาชีพ อาชีวศึกษา ประจำปีงบประมาณ 2566</a></td>
+            </tr>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            <table class="table table-striped mt-5 mb-5 w-75" style="margin: 0 auto;">
+                <tr>
+                    <td>ประชาสัมพันธ์จากงานอาชีวศึกษาทวิภาคี เรื่อง <a href="">ขั้นตอนการยื่นคำร้องขอออกฝึกงานและฝึกอาชีพ ประจำภาคเรียนที่ 2 ปีการศึกษา 2566</a></td>
+                </tr>
+                <tr>
+                    <td>ประชาสัมพันธ์จากงานอาชีวศึกษาทวิภาคี เรื่อง <a href="">รับสมัครนักศึกษาฝึกงาน ประจำภาคเรียนที่ 2 ปีการศึกษา 2566</a></td>
+                </tr>
+                <tr>
+                    <td>ประชาสัมพันธ์จากงานการเงิน เรื่อง <a href="">ใบสำคัญรับเงินเรียนฟรี 15 ปี ภาคเรียนที่ 1 ปีการศึกษา 2566</a> </td>
+                </tr>
+                <tr>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href="">กำหนดการลงทะเบียนเรียน ประจำภาคเรียนที่ 1 ปีการศึกษา 2566 (สำหรับนักศึกษาระดับชั้น ปวช.2 ปวช.3 และปวส.2)</a></td>
+                </tr>
+                <tr>
+                    <td>ประกาศ เรื่อง <a href="">รายชื่อนักเรียนนักศึกษาที่ยื่นเอกสารขอผ่อนผันการเข้ารับราชการทหาร ประจำปี 2566</a></td>
+                </tr>
+                <tr>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href="">ช่องทางอิเล็กทรอนิกส์สำหรับติดต่อวิทยาลัยเทคนิคสัตหีบ</a></td>
+                </tr>
+                <tr>
+                    <td>ประกาศวิทยาลัยเทคนิคสัตหีบ เรื่อง <a href="">การประกาศเจตจำนงสุจริตในการบริหารงาน</a></td>
+                </tr>
+            </table>
+            <div class="container">
+                <class class="row mt-5">
+                    <!-- news1 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news1.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 280px;">
+                                <p class="card-text">พิธีลงนามบันทึกข้อตกลงความร่วมมือ (MOU) เพื่อผลิตกำลังคนอาชีวะ ให้ตรงความต้องการตลาด EEC และพัฒนาระบบเครือข่ายความร่วมมือระหว่างสถานศึกษาและสถานประกอบการในการจัดการอาชีวศึกษา</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news1">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 16 มิถุนายน 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news2 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news2.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 280px;">
+                                <p class="card-text">พิธีเปิด “โครงการอบรมขับขี่ปลอดภัยสร้างวินัยจราจรในสถานศึกษา” ร่วมกับ บริษัท ไทยฮอนด้า จำกัด และ บริษัท รวมยนต์มอเตอร์แลนด์ จำกัด</p>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news2">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 17 มิถุนายน 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news3 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news3.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 280px;">
+                                <p class="card-text">พิธีเปิดโครงการพัฒนาศักยภาพผู้เรียนด้าน “การสร้างจิตสำนึกในการเป็นผู้ประกอบการ และเขียนแผนธุรกิจ” ประจำปีการศึกษา 2566</p>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news3">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 17 มิถุนายน 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news4 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news4.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 250px;">
+                                <p class="card-text">การต้อนรับและร่วมหารือกับคณะผู้บริหาร บริษัท คาเนมิทสึพูลเล่ย์ จำกัด</p>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news4">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 9 มิถุนายน 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                </class>
+                <div class="row mt-5">
+                    <!-- news5 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news5.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height:260px;">
+                                <p class="card-text">พิธีทำบุญตักบาตรถวายพระราชกุศล เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้าฯ พระบรมราชินี</p>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news5">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 3 มิถุนายน 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news6 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news6.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 285px;">
+                                <p class="card-text">พิธีลงนามบันทึกข้อตกลงความร่วมมือทางวิชาการ ระหว่างวิทยาลัยเทคนิคสัตหีบ กับ บริษัท ฟอร์ด มอเตอร์ คัมปะนี (ประเทศไทย) จำกัด</p>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news6">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 17 มิถุนายน 2565</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news7 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news7.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 275px;">
+                                <p class="card-text">การต้อนรับ ดร. ประพิณ อภินรเศรษฐ์ นายกสมาคม Thai Automation and Robotics Association (TARA) ประธานอนุกรรมการ พร้อมคณะฯ เข้าร่วมประชุมคณะอนุกรรมการร่วมภาครัฐและเอกชน...</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news7">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 27 พฤษภาคม 2566</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- news8 -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/news8.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 275px;">
+                                <p class="card-text">การประชุมหารือแนวทางความร่วมมือด้านอาชีวศึกษา ในการฝึกอบรมโดยใช้การทำงานเป็นฐานระหว่างกระทรวงศึกษาธิการแห่งราชอาณาจักรไทย กับกระทรวงแรงงานและเศรษฐกิจแก่งสาธารณรัฐออสเตรีย</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#news8">ข้อมูลเพิ่มเติม</a>
+                                <hr>
+                                <p>วันที่ 26 พฤศจิกายน 2565</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal news1 -->
+<div class="modal fade" id="news1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news1">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="img/news1.jpg" class="w-100" alt="">
+            วันที่ 16 มิถุนายน 2566<br>
+
+วิทยาลัยเทคนิคสัตหีบ ร่วมกับ บริษัท ฟอร์ด มอเตอร์ คัมปะนี (ประเทศไทย) จำกัด จัดพิธีลงนามบันทึกข้อตกลงความร่วมมือ (MOU) เพื่อผลิตกำลังคนอาชีวะ ให้ตรงความต้องการตลาด EEC และพัฒนาระบบเครือข่ายความร่วมมือระหว่างสถานศึกษาและสถานประกอบการในการจัดการอาชีวศึกษา โดยมี ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ และนายรัฐการ จูตะเสน กรรมการผู้จัดการ บริษัท ฟอร์ด เซลส์ แอนด์ เซอร์วิส (ประเทศไทย) จำกัด พร้อมคณะ ร่วมลงนามฯ ซึ่งบันทึกข้อตกลงความร่วมมือดังกล่าวมีขึ้นเพื่อสนับสนุนและพัฒนานักเรียน นักศึกษา แผนกวิชาช่างเมคคาทรอนิกส์และช่างยนต์ ให้มีความรู้และทักษะทางด้านวิชาชีพตรงกับความต้องการของสถานประกอบการ นอกจากนี้ยังมีคณะผู้บริหาร ครู บุคลากรทางการศึกษา แผนกวิชาเมคคาทรอนิกส์และหุ่นยนต์ แผนกวิชาช่างยนต์ และงานความร่วมมือ เข้าร่วมพิธีลงนามฯ ณ ห้องประชุมเวียนนา อาคารปฏิบัติการเวียนนาพาราไดซ์ วิทยาลัยเทคนิคสัตหีบ
+
+ในการนี้ คณะผู้บริหาร บริษัท ฟอร์ด มอเตอร์ คัมปะนี (ประเทศไทย) จำกัด ได้มอบทุนการศึกษา ภายใต้โครงการ “เปลี่ยนความรู้ สู่อาชีพ” แก่นักเรียน นักศึกษา วิทยาลัยเทคนิคสัตหีบ อีกทั้งได้เข้าเยี่ยมชมพื้นที่การจัดการเรียนการสอนการปฏิบัติงานหุ่นยนต์อุตสาหกรรม อีกด้วย
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal news2-->
+<div class="modal fade" id="news2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news2">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/news2.jpg" class="w-100" alt="">
+          วันที่ 17 มิถุนายน 2566<br>
+
+ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ มอบหมายให้นายเรืองยศ รัตนพงษ์ รองผู้อำนวยการฝ่ายพัฒนากิจการนักเรียน นักศึกษา เป็นประธานในพิธีเปิด “โครงการอบรมขับขี่ปลอดภัยสร้างวินัยจราจรในสถานศึกษา” ร่วมกับ บริษัท ไทยฮอนด้า จำกัด และ บริษัท รวมยนต์มอเตอร์แลนด์ จำกัด เพื่อเพิ่มทักษะการขับขี่รถจักรยานยนต์อย่างถูกต้องและปลอดภัย โดยมี นายสมหมาย สมแก้ว หัวหน้าแผนกวิชาช่างยนต์ กล่าวรายงาน พร้อมด้วยคณะวิทยากร บริษัท ไทยฮอนด้า จำกัด ครู และนักเรียน นักศึกษา แผนกวิชาช่างยนต์ เข้าร่วมพิธีฯ ซึ่งมีผู้เข้ารับการอบรม จำนวนทั้งสิ้น 80 คน ณ โดมอเนกประสงค์ วิทยาลัยเทคนิคสัตหีบ
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal news3-->
+<div class="modal fade" id="news3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news3">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/news3.jpg" class="w-100" alt="">
+          วันที่ 17 มิถุนายน 2566<br>
+
+ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ มอบหมายให้นางสาวชุติมา โชคกนกวัฒนา รองผู้อำนวยการฝ่ายแผนงานและความร่วมมือ เป็นประธานในพิธีเปิดโครงการพัฒนาศักยภาพผู้เรียนด้าน “การสร้างจิตสำนึกในการเป็นผู้ประกอบการ และเขียนแผนธุรกิจ” ประจำปีการศึกษา 2566 โดยมี นายขวัญชัย สงวนพงษ์ หัวหน้างานส่งเสริมผลิตผลการค้าและประกอบธุรกิจ กล่าวรายงาน พร้อมด้วย ดร. กล้วยไม้ สุมังค์ วิทยากร สถาบันการจัดการปัญญาภิวัฒน์ คณะครูที่ปรึกษา นักเรียน นักศึกษา เข้าร่วมพิธีฯ ซึ่งมีผู้เข้ารับการอบรม จำนวนทั้งสิ้น 50 คน ณ ห้องประชุมเวียนนา อาคารปฏิบัติการเวียนนาพาราไดซ์ วิทยาลัยเทคนิคสัตหีบ
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal news4-->
+<div class="modal fade" id="news4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news4">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="img/news4.jpg" class="w-100" alt="">
+            วันที่ 9 มิถุนายน 2566<br>
+
+            ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ พร้อมด้วยคณะครู และบุคลากรทางการศึกษา ให้การต้อนรับและร่วมหารือกับบริษัท ซีแพนเนล จำกัด (มหาชน) เกี่ยวกับโครงการนักศึกษา MOU (Memorandum of Understanding) โดยมีความประสงค์จะรับนักศึกษาแผนกวิชาช่างยนต์ แผนกวิชาช่างกลโรงงาน แผนกวิชาช่างไฟฟ้ากำลัง แผนกวิชาช่างอิเล็กทรอนิกส์ แผนกวิชาช่างเขียนแบบเครื่องกล แผนกวิชาแมคคาทรอนิกส์ แผนกวิชาการบัญชี แผนกวิชาคอมพิวเตอร์ธุรกิจ และแผนกวิชาเทคโนโลยีสารสนเทศและเทคโนโลยีคอมพิวเตอร์ เพื่อร่วมงานกับบริษัทฯ ณ ห้องประชุมนาจอมเทียน วิทยาลัยเทคนิคสัตหีบ
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal news5-->
+<div class="modal fade" id="news5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news5">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/news5.jpg" class="w-100" alt="">
+          วันที่ 3 มิถุนายน 2566<br>
+
+ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ พร้อมด้วยคณะผู้บริหาร ครู และบุคลากรทางการศึกษา ร่วมพิธีทำบุญตักบาตรถวายพระราชกุศล เนื่องในโอกาสวันเฉลิมพระชนมพรรษา สมเด็จพระนางเจ้าฯ พระบรมราชินี 3 มิถุนายน 2566 ณ ที่ว่าการอำเภอสัตหีบ อำเภอสัตหีบ จังหวัดชลบุรี
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal news6-->
+<div class="modal fade" id="news6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news6">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="img/news6.jpg" class="w-100" alt="">
+            วันที่ 17 มิถุนายน 2565<br> วิทยาลัยเทคนิคสัตหีบ จัดพิธีลงนามบันทึกข้อตกลงความร่วมมือทางวิชาการ ระหว่าง วิทยาลัยเทคนิคสัตหีบ กับ บริษัท ฟอร์ด มอเตอร์ คัมปะนี (ประเทศไทย) จำกัด โดยมี ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ เป็นผู้แทนฝ่ายวิทยาลัยฯ คุณวิชิต ว่องวัฒนาการ กรรมการผู้จัดการ ฟอร์ด ประเทศไทย Mr. Vinko Saric FTM Plant Manager คุณถิรวุฒิ สายสุพัฒน์ผล ผู้บริหาร ฟอร์ด ชลบุรี ท็อปคาร์ (พัทยา) และคุณชัยยง พะเนียงทอง รองกรรมการผู้จัดการ ฟอร์ด เอกกรุ๊ป เป็นผู้ลงนาม การลงนามในครั้งนี้มีวัตถุประสงค์เพื่อสร้างความร่วมมือระหว่างภาคเอกชนและภาคการศึกษาของรัฐในการสร้างและพัฒนา ช่างเมคคาทรอนิกส์ และช่างยนต์ นอกจากนี้ยังมีความร่วมมือในรูปแบบทวิภาคี ระหว่างภาคเอกชนคือ บริษัทฟอร์ด มอเตอร์ คัมปะนี (ประเทศไทย) จำกัด รวมถึง บริษัทฟอร์ด เซลส์ แอนด์ เซอร์วิส (ประเทศไทย) จำกัด ซึ่งเป็นบริษัทในเครือ และภาคการศึกษาของรัฐ โดยมีวิทยาลัยเทคนิคสัตหีบ เป็นคู่สัญญาในโครงการความร่วมมือ ในพิธีลงนามความร่วมมือในครั้งนี้ ยังมีตัวแทนนักเรียนจากสาขาวิชาเมคคาทรอนิกส์และหุ่นยนต์, สาขาเทคนิคเครื่องกล ได้กล่าวถึงความร่วมือในโครงการฯ ในการนี้ บริษัท ฟอร์ด ยังได้มอบทุนการศึกษาจำนวน 1,500,000 บาท เพื่อสนับสนุนโครงการ 'เปลี่ยนความรู้ สู่อาชีพ' ให้กับนักเรียนนักศึกษาที่เข้าร่วมโครงการ ณ วิทยาลัยเทคนิคสัตหีบ จังหวัดชลบุรี
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal news7-->
+<div class="modal fade" id="news7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news7">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/news7.jpg" class="w-100" alt="">
+          วันที่ 27 พฤษภาคม 2566<br>
+
+ดร. อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ อนุกรรมการและเลขานุการ อ.กรอ.อศ. กลุ่มแมคคาทรอนิกส์หุ่นยนต์และระบบอัตโนมัติ พร้อมด้วยคณะผู้บริหาร ครู และบุคลากรทางการศึกษา แผนกวิชาแมคคาทรอนิกส์และหุ่นยนต์ ให้การต้อนรับ ดร. ประพิณ อภินรเศรษฐ์ นายกสมาคม Thai Automation and Robotics Association (TARA) ประธานอนุกรรมการ พร้อมคณะฯ เข้าร่วมประชุมคณะอนุกรรมการร่วมภาครัฐและเอกชน เพื่อผลิตและพัฒนากำลังคนอาชีวศึกษา (อ.กรอ.อศ.) กลุ่มแมคคาทรอนิกส์หุ่นยนต์และระบบอัตโนมัติ ครั้งที่ 1/2566 ณ ห้องประชุมเวียนนา อาคารปฏิบัติการเวียนนาพาราไดซ์ วิทยาลัยเทคนิคสัตหีบ
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal news8-->
+<div class="modal fade" id="news8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="news8">News</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/news8.jpg" class="w-100" alt="">
+          วันที่ 26 พฤศจิกายน 2565<br> วิทยาลัยเทคนิคสัตหีบจัดการประชุมหารือแนวทางความร่วมมือด้านอาชีวศึกษา ในการฝึกอบรมโดยใช้การทำงานเป็นฐานระหว่างกระทรวงศึกษาธิการแห่งราชอาณาจักรไทย กับกระทรวงแรงงานและเศรษฐกิจแก่งสาธารณรัฐออสเตรีย โดยมีเรืออากาศโทสมพร ปานดำ รองเลขาธิการคณะกรรมการการอาชีวศึกษาเป็นประธานในการประชุม ในการนี้ท่านประธานได้กล่าวถึงนโยบายการจัดการศึกษาของสำนักงานคณะกรรมการการอาชีวศึกษาในด้านความร่วมมือกับสถานประกอบการ และการพัฒนาการจัดการศึกษาในรูปแบบทวิภาคี รวมถึงการพัฒนาสร้างอาชีพใหม่ให้ประชาชน และเปิดโอกาสให้ผู้เรียนสายอาชีพเพิ่มขึ้น โดยยึดหลัก มั่นคง ร่ำรวย ด้วยมืออาชีวะ
+
+หลังจากนั้น ดร.อรทัย โยธินรุ่งเรือง สุดสงวน ผู้อำนวยการวิทยาลัยเทคนิคสัตหีบ ทำหน้าที่เลขานุการในการประชุมได้นำเสนอประวัติความร่วมมือระหว่างสาธารณรัฐออสเตรีย กับวิทยาลัยเทคนิคสัตหีบ รวมถึงความพร้อม ศักยภาพ และผลงานโดดเด่นของวิทยาลัยฯ ต่อท่านประธาน หลังจากนั้นที่ประชุมได้ร่วมกันหารือแนวทางความร่วมมือด้านอาชีวศึกษาในการฝึกอบรมโดยใช้การทำงานเป็นฐานระหว่างกระทรวงศึกษาธิการแห่งราชอาณาจักรไทย กับกระทรวงแรงงานและเศรษฐกิจแห่งสาธารณรัฐออสเตรียในลำดับต่อไป ณ ห้องประชุมเวียนนา อาคารปฏิบัติการเวียนนาพาราไดซ์ วิทยาลัยเทคนิคสัตหีบ
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

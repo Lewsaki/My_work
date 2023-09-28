@@ -1,0 +1,1098 @@
+[
+    {
+        "id": "1f1ce79551ef88a5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "631ca811d8dc0823",
+        "type": "tab",
+        "label": "Setup",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e225bb90bc210768",
+        "type": "group",
+        "z": "1f1ce79551ef88a5",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "30dea56229de6fb6",
+            "d2bbcb70ce76cfb2",
+            "ca745791ee5bf661",
+            "24711a9c54161088",
+            "ceaee531193bc69c",
+            "e18976891a709726",
+            "3f69491f1654f28a",
+            "b036d1d84f0ad1c5",
+            "ed219481c07a0829",
+            "3bc58dfd1569d301",
+            "8b493899fb4abbbc",
+            "f19493808fb6fa92",
+            "57c45dd7a44ad7e4",
+            "8e779457f952dacc",
+            "216a19734f859879",
+            "0bd297ac64d3453c",
+            "7a024a16674c1b76",
+            "9e085d185cd26e66",
+            "c33c44f926dacf63",
+            "65cc809b8dc41796"
+        ],
+        "x": 1474,
+        "y": 239,
+        "w": 692,
+        "h": 782
+    },
+    {
+        "id": "f67ce4a555084a8c",
+        "type": "group",
+        "z": "1f1ce79551ef88a5",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "6476dcfd35bb718e",
+            "54d9585cb99fb5a9",
+            "e792e2d1187da04d",
+            "eacf5ad29450fc96",
+            "8a7901dda8f062ab",
+            "a0e884cbb77c9eda",
+            "0a88f752211c3f56",
+            "ea17a45e271808a6",
+            "28b77d37b9d9ce17",
+            "4ce2cde064dff89c",
+            "ece9d976c4e51a58",
+            "4b48715d00eaef2c",
+            "8376c27de216f666",
+            "beaf3fdb398f6a4c",
+            "a2f85a55dfe9628b",
+            "95375fd4d25e56df",
+            "c370da50bb29443e",
+            "2d8c2e37d9114c6b",
+            "221a87581e9747d4",
+            "e7d1b713216699da",
+            "1b531d21cdb50a2e",
+            "808b3271412bb7c6",
+            "2525543af6651e88",
+            "0d13edc2b149d9c2",
+            "54a4663242c7604a",
+            "06ba87cb45931141",
+            "be0e2f1164c16c49"
+        ],
+        "x": 514,
+        "y": 279,
+        "w": 832,
+        "h": 922
+    },
+    {
+        "id": "6476dcfd35bb718e",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "54d9585cb99fb5a9",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "url": "/api/students/:id?",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [
+                "6476dcfd35bb718e",
+                "be0e2f1164c16c49"
+            ]
+        ]
+    },
+    {
+        "id": "e792e2d1187da04d",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1270,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "eacf5ad29450fc96",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "function 1",
+        "func": "const db = global.get('db')\n\nlet query = db('students')\n    .orderBy('code')\n// false = 0 false '' \"\" undefine null\nif(msg.req.params.id){\n    query.where('id',msg.req.params.id)\n}\n    \nlet students = await query\n\nmsg.payload = {\n    ok:1,\n    students,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 420,
+        "wires": [
+            [
+                "e792e2d1187da04d",
+                "8a7901dda8f062ab"
+            ]
+        ]
+    },
+    {
+        "id": "8a7901dda8f062ab",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ac303b5ecb269a84",
+        "type": "catch",
+        "z": "1f1ce79551ef88a5",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 740,
+        "y": 60,
+        "wires": [
+            [
+                "95badb851a179f3a",
+                "3ee77f044bdb95c3"
+            ]
+        ]
+    },
+    {
+        "id": "85cb668d16b3ade8",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1150,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "95badb851a179f3a",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3ee77f044bdb95c3",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "name": "function 2",
+        "func": "msg.payload = {\n    ok: 0,\n    error: msg.error\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 60,
+        "wires": [
+            [
+                "85cb668d16b3ade8"
+            ]
+        ]
+    },
+    {
+        "id": "a0e884cbb77c9eda",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "url": "/api/students",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 630,
+        "y": 640,
+        "wires": [
+            [
+                "28b77d37b9d9ce17",
+                "0d13edc2b149d9c2"
+            ]
+        ]
+    },
+    {
+        "id": "0a88f752211c3f56",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1230,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ea17a45e271808a6",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "function 3",
+        "func": "const db = global.get('db')\nlet body = msg.req.body\n    body.createdBy = msg.token.uid\nlet ids = await db('students').insert({\n    code:body.code,\n    name:body.name,\n    createdBy:body.createdBy\n})\n\nlet id = ids[0]\n\nmsg.payload = {\n    ok: 1,\n    id,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 640,
+        "wires": [
+            [
+                "0a88f752211c3f56",
+                "4ce2cde064dff89c"
+            ]
+        ]
+    },
+    {
+        "id": "28b77d37b9d9ce17",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "4ce2cde064dff89c",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "30dea56229de6fb6",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "url": "/api/product/:id?",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1680,
+        "y": 280,
+        "wires": [
+            [
+                "ca745791ee5bf661",
+                "24711a9c54161088"
+            ]
+        ]
+    },
+    {
+        "id": "d2bbcb70ce76cfb2",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2090,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ca745791ee5bf661",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "function pd 1",
+        "func": "const db = global.get('db')\n\nlet query = db('product')\n    .orderBy('pro_id')// select * from \n\nif (msg.req.params.id) {\n    query.where('pro_id', msg.req.params.id)\n}\n\nlet product = await query\n\nmsg.payload = {\n    ok:1,\n    product,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1890,
+        "y": 280,
+        "wires": [
+            [
+                "d2bbcb70ce76cfb2",
+                "ceaee531193bc69c"
+            ]
+        ]
+    },
+    {
+        "id": "24711a9c54161088",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1800,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ceaee531193bc69c",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2040,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ece9d976c4e51a58",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "url": "/api/students",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 650,
+        "y": 820,
+        "wires": [
+            [
+                "beaf3fdb398f6a4c",
+                "54a4663242c7604a"
+            ]
+        ]
+    },
+    {
+        "id": "4b48715d00eaef2c",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1270,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "8376c27de216f666",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "function 4",
+        "func": "const db = global.get('db')\nlet body = msg.req.body\n    body.updatedBy = msg.token.uid\nlet result = await db('students')\n    .where('id',body.id)\n    .update(body)\n\nmsg.payload = {\n    ok:1,\n    result,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 820,
+        "wires": [
+            [
+                "4b48715d00eaef2c",
+                "a2f85a55dfe9628b"
+            ]
+        ]
+    },
+    {
+        "id": "beaf3fdb398f6a4c",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "a2f85a55dfe9628b",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "95375fd4d25e56df",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "url": "/api/students/:id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 640,
+        "y": 1040,
+        "wires": [
+            [
+                "221a87581e9747d4",
+                "06ba87cb45931141"
+            ]
+        ]
+    },
+    {
+        "id": "c370da50bb29443e",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1270,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "2d8c2e37d9114c6b",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "function 5",
+        "func": "const db = global.get('db')\n\nlet result = await db('students')\n    .where('id',msg.req.params.id)\n    .del()\nmsg.payload = {\n    ok:1,\n    result,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1040,
+        "wires": [
+            [
+                "c370da50bb29443e",
+                "e7d1b713216699da"
+            ]
+        ]
+    },
+    {
+        "id": "221a87581e9747d4",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "e7d1b713216699da",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "e18976891a709726",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "url": "/api/product",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1630,
+        "y": 460,
+        "wires": [
+            [
+                "b036d1d84f0ad1c5",
+                "ed219481c07a0829"
+            ]
+        ]
+    },
+    {
+        "id": "3f69491f1654f28a",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2050,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b036d1d84f0ad1c5",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "function pd2",
+        "func": "const db = global.get('db')\nlet body = msg.req.body\nlet ids = await db('product').insert({\n    pro_name:body.pro_name,\n    cost:body.cost,\n    sale:body.sale,\n    amount:body.amount\n})\nlet id = ids[0]\n\nmsg.payload = {\n    ok: 1,\n    id,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1870,
+        "y": 460,
+        "wires": [
+            [
+                "3f69491f1654f28a",
+                "3bc58dfd1569d301"
+            ]
+        ]
+    },
+    {
+        "id": "ed219481c07a0829",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3bc58dfd1569d301",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1960,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "8b493899fb4abbbc",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "url": "/api/product",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1580,
+        "y": 640,
+        "wires": [
+            [
+                "57c45dd7a44ad7e4",
+                "8e779457f952dacc"
+            ]
+        ]
+    },
+    {
+        "id": "f19493808fb6fa92",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2090,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "57c45dd7a44ad7e4",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "function pd3",
+        "func": "const db = global.get('db')\nlet body = msg.req.body\nlet result = await db('product')\n    .where('pro_id',body.pro_id)\n    .update(body)\nmsg.payload = {\n    ok:1,\n    result,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1870,
+        "y": 640,
+        "wires": [
+            [
+                "f19493808fb6fa92",
+                "216a19734f859879"
+            ]
+        ]
+    },
+    {
+        "id": "8e779457f952dacc",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "216a19734f859879",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2020,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "0bd297ac64d3453c",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "url": "/api/product/:id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1600,
+        "y": 860,
+        "wires": [
+            [
+                "9e085d185cd26e66",
+                "c33c44f926dacf63"
+            ]
+        ]
+    },
+    {
+        "id": "7a024a16674c1b76",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2090,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "9e085d185cd26e66",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "function pd4",
+        "func": "const db = global.get('db')\n\nlet result = await db('product')\n    .where('pro_id',msg.req.params.id)\n    .del()\nmsg.payload = {\n    ok:1,\n    result,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1870,
+        "y": 860,
+        "wires": [
+            [
+                "7a024a16674c1b76",
+                "65cc809b8dc41796"
+            ]
+        ]
+    },
+    {
+        "id": "c33c44f926dacf63",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "65cc809b8dc41796",
+        "type": "debug",
+        "z": "1f1ce79551ef88a5",
+        "g": "e225bb90bc210768",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2020,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "fdce978a828798a7",
+        "type": "http in",
+        "z": "1f1ce79551ef88a5",
+        "name": "",
+        "url": "/api/login",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "253a7526784d7db6"
+            ]
+        ]
+    },
+    {
+        "id": "253a7526784d7db6",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "name": "function 6",
+        "func": "const db = global.get('db')\nlet body = msg.req.body\nlet user = await db('user')\n    .where('user', body.user)\n    .where('pass', body.pass)\n    .then(rows=> rows[0])\nif (!user){\n    throw new Error('user or pass incorrect')\n    \n}\nmsg.payload = {\n    uid:user.id,\n}\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 240,
+        "wires": [
+            [
+                "aecb571442e71863"
+            ]
+        ]
+    },
+    {
+        "id": "aecb571442e71863",
+        "type": "jwt sign",
+        "z": "1f1ce79551ef88a5",
+        "name": "pass=123456789Z",
+        "alg": "HS512",
+        "exp": "1d",
+        "jwkurl": "",
+        "jwkkid": "",
+        "secret": "123456789Z",
+        "key": "",
+        "signvar": "payload",
+        "storetoken": "token",
+        "x": 1010,
+        "y": 240,
+        "wires": [
+            [
+                "766344a84541dd41"
+            ]
+        ]
+    },
+    {
+        "id": "766344a84541dd41",
+        "type": "function",
+        "z": "1f1ce79551ef88a5",
+        "name": "function 7",
+        "func": "msg.payload = {\n    ok:1,\n    token:msg.token,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 240,
+        "wires": [
+            [
+                "05cca00ceaabb8ce"
+            ]
+        ]
+    },
+    {
+        "id": "05cca00ceaabb8ce",
+        "type": "http response",
+        "z": "1f1ce79551ef88a5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1b531d21cdb50a2e",
+        "type": "jwt verify",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "alg": [
+            "HS512"
+        ],
+        "jwkurl": "",
+        "secret": "123456789Z",
+        "key": "",
+        "signvar": "bearer",
+        "storetoken": "token",
+        "x": 970,
+        "y": 320,
+        "wires": [
+            [
+                "2525543af6651e88"
+            ]
+        ]
+    },
+    {
+        "id": "808b3271412bb7c6",
+        "type": "link in",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "link-in JWT",
+        "links": [],
+        "x": 845,
+        "y": 320,
+        "wires": [
+            [
+                "1b531d21cdb50a2e"
+            ]
+        ]
+    },
+    {
+        "id": "2525543af6651e88",
+        "type": "link out",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "link out 1",
+        "mode": "return",
+        "links": [],
+        "x": 1095,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0d13edc2b149d9c2",
+        "type": "link call",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "links": [
+            "808b3271412bb7c6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 870,
+        "y": 640,
+        "wires": [
+            [
+                "ea17a45e271808a6"
+            ]
+        ]
+    },
+    {
+        "id": "54a4663242c7604a",
+        "type": "link call",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "links": [
+            "808b3271412bb7c6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 850,
+        "y": 820,
+        "wires": [
+            [
+                "8376c27de216f666"
+            ]
+        ]
+    },
+    {
+        "id": "06ba87cb45931141",
+        "type": "link call",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "links": [
+            "808b3271412bb7c6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 870,
+        "y": 1040,
+        "wires": [
+            [
+                "2d8c2e37d9114c6b"
+            ]
+        ]
+    },
+    {
+        "id": "be0e2f1164c16c49",
+        "type": "link call",
+        "z": "1f1ce79551ef88a5",
+        "g": "f67ce4a555084a8c",
+        "name": "",
+        "links": [
+            "808b3271412bb7c6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 910,
+        "y": 420,
+        "wires": [
+            [
+                "eacf5ad29450fc96"
+            ]
+        ]
+    },
+    {
+        "id": "bfaa7ff0fa3126d2",
+        "type": "function",
+        "z": "631ca811d8dc0823",
+        "name": "setup db students",
+        "func": "",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "const db = knex({\n    client: 'mysql2',\n    connection: {\n        host: '127.0.0.1',\n        port: 3306,\n        user: 'root',\n        password: '',\n        database: 'thanapol_026',\n    }\n});\n\nglobal.set('db', db)//เอาตัวแปร db ไปเก็บใน global",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "knex",
+                "module": "knex"
+            },
+            {
+                "var": "mysql2",
+                "module": "mysql2"
+            }
+        ],
+        "x": 230,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    }
+]

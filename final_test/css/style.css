@@ -1,0 +1,43 @@
+.container {
+    overflow: auto;
+  }
+  
+  .text {
+    float: left;
+    width: 100%;
+  }
+  
+  .image {
+    float: right;
+    width: 100%;
+  }
+  .img1 {
+    float: left;
+  }
+  
+  .img2 {
+    float: right;
+  }
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .left {
+    position: absolute;
+    left: 50px;
+    width: 300px;
+    padding: 10px;
+  } 
+  .right {
+    position: absolute;
+    right: 50px;
+    width: 300px;
+    padding: 10px;
+  }   
+  .center-left {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+  }

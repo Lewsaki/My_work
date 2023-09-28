@@ -1,0 +1,1 @@
+node-red --userDir c:/Users/Admin/Desktop/TNP/node-red
