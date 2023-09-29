@@ -7,6 +7,7 @@
                 <li class="left"><a href="#contact">Contact</a></li>
                 <li class="left"><a href="/limitmessage">Limit Message</a></li>
                 <li class="left"><a href="/previewImage">PreviewImage</a></li>
+                <li class="left"><a href="/product">Product</a></li>
             </ul>
         </nav>
     </div>
